@@ -2,11 +2,11 @@
   "name": "count",
   "version": "1.0.0",
   "description": "sistema de inventario y facturacion",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "lint": "standard src/*.js src/**/*.js",
+    "lint": "standard *.js **/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "babel src/index.js src/**/*.js --out-dir dist --presets es2015",
+    "dist": "babel server.js **/*.js --out-dir dist --presets es2015",
     "serve": "node dist/src",
     "servedist": "npm run dist &&  npm run serve",
     "start": "npm run lint && npm run dist &&  npm run serve"

@@ -1,7 +1,11 @@
 {
   "db_config" : {
-    "host": "localhost",
-    "port": 27017,
-    "name": "test"
+    "user": "postgres",
+	"database": "bd_akadem",
+	"password": 123456,
+	"host": "localhost",
+	"port": 5432,
+	"max": 10,
+	"idleTimeoutMillis": 30000
   }
 }

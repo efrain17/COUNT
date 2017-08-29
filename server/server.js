@@ -2,27 +2,24 @@
 
 var express = require('express');
 var bodyparser = require('body-parser');
-
+var path = require('path');
 var db_tools = require('./tools/db_tools');
+const port = process.env.PORT || 9000;
 
 var app = express();
 
+var config = require('./config.json');
+var routes = require('./routes/routes');
 
-db_tools.DBConnectMongoose()
-    .then(() => {
-        var routes = require('./routes/routes');
+app.use(bodyparser.urlencoded({extended: true}));
+app.use(bodyparser.json({limit: '10mb'}));
+app.use('/', express.static(__dirname + '/../client/dist'));
+app.all('/app/*', (req, res) => {
+  res.status(200).sendFile(
+    path.join(__dirname, '/../client/dist/index.html'));
+})
+routes.assignRoutes(app);
 
-        // configure app to use bodyParser()
-        // this will let us get the data from a POST
-        app.use(bodyparser.urlencoded({extended: true}));
-        app.use(bodyparser.json({limit: '10mb'}));
+app.listen(port, () => console.log(`Server listening on port ${port}`));
 
-        routes.assignRoutes(app);
 
-        app.listen(3000);
-
-        console.log('Server listening on port 3000');
-    })
-    .catch(err => {
-        console.log('Error: ' + err)
-    })
