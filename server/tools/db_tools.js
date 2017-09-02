@@ -1,43 +1,27 @@
 'use strict'
 
-var pg = require('pg')
-var config = require('../config.json')
-var acquireCount = 0
+var mongoose = require('mongoose');
+var config = require('../config.json');
 
-global.pool = new pg.Pool(config)
+var db;
 
-console.log(global.pool)
+exports.DBConnectMongoose = function() {
+  return new Promise((resolve, reject)=> {
+    mongoose.Promise = global.Promise;
 
-global.pool.on('error', (err, client) => {
-  console.error('idle client error', err.message, err.stack)
-})
+    if (db) return resolve(db);
 
-global.pool.on('acquire', function (client) {
-  acquireCount++
-  console.log(acquireCount)
-})
-
-exports.query = function(myquerry) {
-  return new Promise((resolve, reject) => {
-    global.pool.connect((err, client, done) => {
-      if (err) return reject(err)
-      client.query(myquerry, (err, result) => {
-        done()
-        if (err) return reject(err)
-        resolve(result.rows)
-      })
+    mongoose.connect('mongodb://' + config.db_config.host + ":" + config.db_config.port + "/" + config.db_config.name, {
+        useMongoClient: true
     })
-  })
-}
-
-exports.DBConnect = function() {
-  return new Promise((resolve, reject) => {
-  	global.pool = new pg.Pool(config)
-	global.pool.on('error', (err, client) => {
-	  console.error('idle client error', err.message, err.stack)
-	})
-	console.log('me conecte');
-	if(global.pool) return resolve(pool);
-	else return reject();
+    .then(() => {
+        db = mongoose.connection;
+        console.log('mongo connection created');
+        resolve(db);
+    })
+    .catch(err => {
+        console.log('error creating db connection: ' + err);
+        reject(err);
+    });
   });
 };
