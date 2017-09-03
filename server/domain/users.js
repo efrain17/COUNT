@@ -15,7 +15,7 @@ exports.getUsers = function() {
     return new Promise(function(resolve, reject) {
         usersDB.getUsers()
             .then(users => {
-                resolve(users);
+                resolve(users)
             })
             .catch(err => {
                 reject(err);

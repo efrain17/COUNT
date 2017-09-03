@@ -2,6 +2,9 @@
   "db_config" : {
     "host": "localhost",
     "port": 27017,
-    "name": "supermercado"
+    "name": "count"
+  },
+  "token_config": {
+  	"TOKEN_SECRET": "tokenultrasecreto"
   }
 }
