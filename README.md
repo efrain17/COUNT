@@ -14,7 +14,8 @@ Este README documentaría normalmente los pasos necesarios para que su aplicaci�
 * [Aprenda Markdown] (https://bitbucket.org/tutorials/markdowndemo)
 
 ### ¿Cómo me instalo? ###
-
+* Instalacion de mocha para tdd
+* npm install mocha -g
 * Instalación de dependecias en el Front-End
 * cd /app/ 
 * npm install

@@ -12,13 +12,9 @@ exports.createUser = function(userData) {
 };
 
 exports.getUsers = function() {
-    return new Promise(function(resolve, reject) {
-        usersDB.getUsers()
-            .then(users => {
-                resolve(users)
-            })
-            .catch(err => {
-                reject(err);
-            })
+    return new Promise((resolve, reject) =>{
+      usersDB.getUsers()
+      .then(users => resolve(users))
+      .catch(err => reject(err));
     });
 }

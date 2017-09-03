@@ -1,7 +1,8 @@
 var db_tools = require('../tools/db_tools');
 var mongoose = require('mongoose');
+var db = db_tools.DBConnectMongoose()
+.catch(err => console.log(err));
 
-// crea el schema
 var UserSchema = new mongoose.Schema({
     cedula: { type: String, index: true, unique: true },
     lastname: String,
@@ -10,7 +11,6 @@ var UserSchema = new mongoose.Schema({
     parametro: String,
     chao: String
 });
-
 // autor: { type: Schema.ObjectId, ref: "Autor" } 
 
 var User = mongoose.model('user', UserSchema);
@@ -34,13 +34,11 @@ exports.saveUser = function(userData) {
 
 exports.getUsers = function(userIds) {
     return new Promise((resolve, reject) => {
-        User.find({})
-        .then(users => {
-            resolve(users);
-        })
-        .catch(err => {
-            console.log('error: ' + err)
-            reject(err);
-        })
+      User.find({})
+      .then(users => resolve(users))
+      .catch(err => {
+          console.log('error: ' + err)
+          reject(err);
+      })
     })
 }

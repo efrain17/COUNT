@@ -1,7 +1,7 @@
 var jwt = require('jwt-simple');
 var moment = require('moment');
 var config = require('../config.json')
-var tokenKey = process.env.TOKEN_SECRET || config.token_config;
+var tokenKey = process.env.TOKEN_SECRET || config.token_config.TOKEN_SECRET;
 
 exports.createToken = function(user) {
   var payload = {
@@ -19,12 +19,13 @@ exports.ensureAuthenticated = function(req, res, next) {
     .send({message: "Tu petición no tiene cabecera de autorización"});
   }
   
-  var token = req.headers.authorization.split(" ")[1];
+  var token = req.headers.authorization;
+
   var payload = jwt.decode(token, tokenKey);
   
   if(payload.exp <= moment().unix()) {
      return res
- 	.status(401)
+ 	  .status(401)
     .send({message: "El token ha expirado"});
   }
   req.user = payload.sub;
