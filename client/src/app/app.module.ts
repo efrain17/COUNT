@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule }      from '@angular/common';
-import {RouterModule,Routes} from '@angular/router'
+import {RouterModule, Routes} from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -13,9 +13,7 @@ import { ErrorComponent } from './error/error.component';
 
 export const ROUTES: Routes = [
   { path: '', redirectTo: 'app', pathMatch: 'full'}, 
-  { path: 'app',   loadChildren: './core/core.module#CoreModule'},
-  { path: 'error', component: ErrorComponent}, 
-  { path: '**',    component: ErrorComponent}
+  { path: 'app',   loadChildren: './core/core.module#CoreModule'}
 ];
 
 @NgModule({

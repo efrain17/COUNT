@@ -61,7 +61,7 @@
     },
     "serve": {
       "port": 9000,
-      "ssl": true
+      "ssl": false
     }
   }
 }
