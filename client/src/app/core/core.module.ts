@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 import { ROUTES }       from './core.routes';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { ROUTES }       from './core.routes';
     FormsModule,
     ROUTES
   ],
-  declarations: [CoreComponent, NavbarComponent, SidebarComponent]
+  declarations: [CoreComponent, NavbarComponent, SidebarComponent, FooterComponent]
 })
 export class CoreModule { }
