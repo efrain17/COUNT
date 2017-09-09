@@ -1,3 +1,12 @@
-<p>
-  sidebar works!
-</p>
+<md-sidenav-container class="example-container">
+  <md-sidenav #sidenav class="example-sidenav">
+    Jolly good!
+  </md-sidenav>
+
+  <div class="example-sidenav-content">
+    <button type="button" md-button (click)="open()" (toggleSidebarEvent)="open()">
+      Open sidenav
+    </button>
+  </div>
+
+</md-sidenav-container>
