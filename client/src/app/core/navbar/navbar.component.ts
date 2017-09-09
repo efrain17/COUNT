@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
+import { MdSidenav } from '@angular/material';
+import { CoreService } from '../core.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,22 +9,20 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   @Output() toggleSidebarEvent: EventEmitter<any> = new EventEmitter();
- 
+  public sidenav: MdSidenav;
 
-  constructor() { 
+  constructor(private coreService: CoreService) { 
   	
   }
 
   ngOnInit() {
-  	
+  	console.log('hola');
   }
   
   toggleSidebar(): void {
-  	console.log('emitiendo');
+  	console.log('emitie');
+    this.coreService.open();
     //this.toggleSidebarEvent.emit();
   }
-
-
-
 
 }

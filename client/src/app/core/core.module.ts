@@ -9,7 +9,7 @@ import { MdSidenavModule} from '@angular/material';
 
 import { ROUTES }       from './core.routes';
 import { FooterComponent } from './footer/footer.component';
-
+import { CoreService } from './core.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +17,12 @@ import { FooterComponent } from './footer/footer.component';
     MdSidenavModule,
     ROUTES
   ],
-  declarations: [CoreComponent, NavbarComponent, SidebarComponent, FooterComponent]
+  declarations: [
+    CoreComponent, 
+    NavbarComponent, 
+    SidebarComponent, 
+    FooterComponent
+  ],
+  providers: [ CoreService ]
 })
 export class CoreModule { }
