@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { MdButtonModule } from '@angular/material';
+import { MdCardModule } from '@angular/material';
 
 
 import { RouterModule } from '@angular/router';
@@ -14,6 +15,7 @@ export const routes = [
   imports: [
     CommonModule,
     MdButtonModule,
+    MdCardModule,
     RouterModule.forChild(routes),
   ],
   declarations: [
