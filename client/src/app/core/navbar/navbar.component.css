@@ -1,7 +1,19 @@
 .nav-g {
-	
-	top:0 ; /*El valor 0 indica que va a quedar arriba de todo*/
-	left: 0; /*Para que el menu se ubique siempre en la parte izquierda de la pantalla*/
-	width: 100%; /*100% para que ocupe todo el ancho del navegador*/
-	position: fixed;
+	overflow: hidden;
+    background-color: #3E50B4;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    position: sticky;
+    z-index: 1080;
+    box-shadow: 0 2px 5px rgba(0,0,0,.26);
+}
+
+.nav-g a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
