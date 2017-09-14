@@ -10,7 +10,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
-import { MdButtonModule, MdSidenavModule }  from '@angular/material';
+
+import {
+  MdButtonModule,
+  MdCoreModule,
+  MdExpansionModule,
+  MdNativeDateModule,
+  MdRippleModule,
+  MdSidenavModule
+} from '@angular/material';
+@NgModule({
+  exports: [
+    MdButtonModule,
+    MdCoreModule,
+    MdExpansionModule,
+    MdNativeDateModule,
+    MdSidenavModule,
+  ]
+})
+export class PlunkerMaterialModule {}
 
 export const ROUTES: Routes = [
   { path: '', redirectTo: 'app', pathMatch: 'full'}, 
@@ -29,8 +47,8 @@ export const ROUTES: Routes = [
     HttpModule,
     RouterModule.forRoot(ROUTES),
     CommonModule,
-    MdButtonModule,
-    MdSidenavModule
+    PlunkerMaterialModule,
+    MdNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

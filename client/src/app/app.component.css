@@ -1,5 +1,21 @@
 html, body, material-app, md-sidenav-container, .my-content {
-  margin: 0;
-  width: 100%;
+
+}
+
+.sidenav {
   height: 100%;
+  position: fixed!important;
+  overflow: auto;
+  width: 230px;
+  background: #f5f5f5;
+}
+
+.sidenav-container .mat-sidenav-content,
+.sidenav-container md-sidenav {
+  display: flex;
+  overflow: visible;
+}
+
+.scrolling-content {
+  overflow: auto;
 }

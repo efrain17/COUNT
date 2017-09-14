@@ -1,7 +1,9 @@
-<app-navbar (toggleSidebarEvent)="open()"></app-navbar>
-<md-sidenav-container style="height: 100%">
-	<app-sidebar></app-sidebar>
-	<router-outlet></router-outlet>
+<app-navbar></app-navbar>
+<md-sidenav-container class="sidenav-container" >
+	<md-sidenav  #sidenav class="sidenav" mode="side" opened="false" style="height: 100%">
+		<app-sidebar class="scrolling-content"></app-sidebar>
+	</md-sidenav>
+	<router-outlet class="scrolling-content"></router-outlet>
 </md-sidenav-container>
 
 

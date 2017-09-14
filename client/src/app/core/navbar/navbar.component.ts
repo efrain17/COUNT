@@ -20,9 +20,7 @@ export class NavbarComponent implements OnInit {
   }
   
   toggleSidebar(): void {
-  	console.log('emitie');
     this.coreService.open();
-    //this.toggleSidebarEvent.emit();
   }
 
 }
