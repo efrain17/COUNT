@@ -1,5 +1,21 @@
 html, body, material-app, md-sidenav-container, .my-content {
+  margin: 0;
+  width: 100%;
+}
 
+app-core {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .sidenav {
@@ -19,3 +35,11 @@ html, body, material-app, md-sidenav-container, .my-content {
 .scrolling-content {
   overflow: auto;
 }
+
+.app-component-sidenav {
+	display: flex !important;
+    -webkit-box-flex: 1 !important;
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+}
+
