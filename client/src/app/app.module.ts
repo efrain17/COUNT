@@ -17,7 +17,9 @@ import {
   MdExpansionModule,
   MdNativeDateModule,
   MdRippleModule,
-  MdSidenavModule
+  MdSidenavModule,
+  MdMenuModule,
+  MdIconModule
 } from '@angular/material';
 @NgModule({
   exports: [
@@ -26,6 +28,8 @@ import {
     MdExpansionModule,
     MdNativeDateModule,
     MdSidenavModule,
+    MdMenuModule,
+    MdIconModule
   ]
 })
 export class PlunkerMaterialModule {}

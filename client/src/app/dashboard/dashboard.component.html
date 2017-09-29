@@ -1,6 +1,13 @@
 <p>
   dashboard works!
 </p>
+
+<md-menu #menu="mdMenu"  y-position="above" x-position="before">
+  <button md-menu-item>Item 1</button>
+  <button md-menu-item>Item 2</button>
+</md-menu>
+<button md-button [mdMenuTriggerFor]="menu">Menu</button>
+
 <div class="button-row">
   <button md-button>Basic</button>
   <button md-button color="primary">Primary</button>

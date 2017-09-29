@@ -23,7 +23,7 @@ app-core {
   position: fixed!important;
   overflow: auto;
   width: 230px;
-  background: #f5f5f5;
+  background: white;
 }
 
 .sidenav-container .mat-sidenav-content,
@@ -42,4 +42,62 @@ app-core {
     -ms-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
 }
+.docs-component-viewer-sidenav {
+    box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
 
+.docs-component-viewer-sidenav h3 {
+    background: rgba(0, 0, 0, 0.32);
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.docs-component-viewer-sidenav h3 {
+    border: none;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 16px;
+}
+
+.docs-component-viewer-sidenav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.docs-component-viewer-sidenav li {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin: 0;
+    padding: 0;
+}
+
+.docs-component-viewer-sidenav li {
+    border-color: rgba(0, 0, 0, 0.06);
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.docs-component-viewer-sidenav li>a {
+    box-sizing: border-box;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 47px;
+    text-decoration: none;
+    transition: all .3s;
+    padding: 0 16px;
+    position: relative;
+}
+
+.docs-component-viewer-sidenav li > a {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.component-viewer-sidenav li > a:hover, .docs-component-viewer-sidenav li > a:focus,
+.docs-component-viewer-sidenav li > a:hover {
+    background: #fafafa;
+    color: #673ab7;
+}
