@@ -1,23 +1,19 @@
-var db_tools = require('../tools/db_tools');
-var mongoose = require('mongoose');
-var db = db_tools.DBConnectMongoose()
-.catch(err => console.log(err));
+let db_tools = require('../tools/db_tools');
+let mongoose = require('mongoose');
 
-var UserSchema = new mongoose.Schema({
-    cedula: { type: String, index: true, unique: true },
-    lastname: String,
-    completename: String,
-    dni: String,
-    parametro: String,
-    chao: String
+let UserSchema = new mongoose.Schema({
+  cedula: { type: String, index: true, unique: true },
+  nombres: String,
+  apellidos: String,
+  correo: String
 });
 // autor: { type: Schema.ObjectId, ref: "Autor" } 
 
-var User = mongoose.model('user', UserSchema);
+let User = mongoose.model('user', UserSchema);
 exports.User = User;
 
 exports.saveUser = function(userData) {
-  var user = new User(userData);
+  let user = new User(userData);
   
   return new Promise((resolve, reject) => {
     user.save()
@@ -33,12 +29,12 @@ exports.saveUser = function(userData) {
 }
 
 exports.getUsers = function(userIds) {
-    return new Promise((resolve, reject) => {
-      User.find({})
-      .then(users => resolve(users))
-      .catch(err => {
-          console.log('error: ' + err)
-          reject(err);
-      })
+  return new Promise((resolve, reject) => {
+    User.find({})
+    .then(users => resolve(users))
+    .catch(err => {
+        console.log('error: ' + err)
+        reject(err);
     })
+  })
 }

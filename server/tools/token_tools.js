@@ -1,10 +1,10 @@
-var jwt = require('jwt-simple');
-var moment = require('moment');
-var config = require('../config.json')
-var tokenKey = process.env.TOKEN_SECRET || config.token_config.TOKEN_SECRET;
+let jwt = require('jwt-simple');
+let moment = require('moment');
+let config = require('../config.json')
+let tokenKey = process.env.TOKEN_SECRET || config.token_config.TOKEN_SECRET;
 
 exports.createToken = function(user) {
-  var payload = {
+  let payload = {
     sub: user._id,
     iat: moment().unix(),
     exp: moment().add(14, "days").unix(),
@@ -19,9 +19,9 @@ exports.ensureAuthenticated = function(req, res, next) {
     .send({message: "Tu petición no tiene cabecera de autorización"});
   }
   
-  var token = req.headers.authorization;
+  let token = req.headers.authorization;
 
-  var payload = jwt.decode(token, tokenKey);
+  let payload = jwt.decode(token, tokenKey);
   
   if(payload.exp <= moment().unix()) {
      return res
