@@ -11,7 +11,7 @@
 
 * Sumario rápido
 * Versión 1.00
-* ![Alt text](http://www.unixstickers.com/image/data/stickers/angularjs/angular-js.sh.png)
+* ![Alt text](https://d585tldpucybw.cloudfront.net/sfimages/default-source/labs/kendo/kendoui-angular2/kendoka.png?sfvrsn=4)
 
 ### ¿Cómo me instalo? ###
 * Instalacion de mocha para tdd
