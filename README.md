@@ -1,17 +1,17 @@
 # README #
 
-Este README documentaría normalmente los pasos necesarios para que su aplicación funcione.
-
 ### Descripción del Proyecto
-* Sistema SAS denomido COUNT de Facturación e Inventario
-* Desarrollado en Angular.js y Node.js
-* Base de datos PostgresSQL 9.4
+* Sistema SAS COUNT de Facturación e Inventario
+* Desarrollado en Angular y Node.js
+* Base de datos MongoDB
+* Clear arquitecture + hexagonal arquitecture
+* TDD: mocha + jasmin + karma
 
 ### ¿Para qué es este repositorio? ###
 
 * Sumario rápido
 * Versión 1.00
-* [Aprenda Markdown] (https://bitbucket.org/tutorials/markdowndemo)
+* ![Alt text](http://www.unixstickers.com/image/data/stickers/angularjs/angular-js.sh.png)
 
 ### ¿Cómo me instalo? ###
 * Instalacion de mocha para tdd
@@ -25,5 +25,5 @@ Este README documentaría normalmente los pasos necesarios para que su aplicaci�
 
 ### ¿Con quién hablo? ###
 
-* Dueño o administrador de Repo
-* Otro contacto de la comunidad o del equipo
+* Dueño o administrador de Repo: carlosefrain17@hotmail.com
+* Otro contacto de la comunidad o del equipo 
