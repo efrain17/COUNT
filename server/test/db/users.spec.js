@@ -2,7 +2,7 @@ let usersDB = require('../../db/users');
 
 describe('usersDbTests', ()=> {
 
-  fit('ingreso de usuario', (done) => {
+  it('ingreso de usuario en DB', (done) => {
     usersDB.saveUser({cedula: 'user3Cedula'})
     .then((createdUser) => {
       expect(createdUser._id).toBeDefined();
@@ -11,8 +11,8 @@ describe('usersDbTests', ()=> {
         .then(([user]) => {
           expect(user.cedula).toBe('user3Cedula');
           done();
-        });
-    });
+        })
+    })
   });
 
 });
