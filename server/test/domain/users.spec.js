@@ -1,8 +1,7 @@
 let usersDomain = require('../../domain/users');
 let usersDB = require('../../db/users');
 
-
-describe('usersDomainTests', ()=> {
+describe('prueba de usuarios en la capa domain', ()=> {
 
   beforeEach(() => {
     spyOn(usersDB, 'saveUser').and.returnValue(Promise.resolve('user'));

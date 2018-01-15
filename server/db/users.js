@@ -2,10 +2,14 @@ let db_tools = require('../tools/db_tools');
 let mongoose = require('mongoose');
 
 let UserSchema = new mongoose.Schema({
-  cedula: { type: String, index: true, unique: true },
+  email: { type: String, index: true, unique: true },
   nombres: String,
   apellidos: String,
-  correo: String
+  contrasenia: String,
+  fechaNacimiento: String,
+  genero: String,
+  celular: String,
+  ubicacion: String
 });
 // autor: { type: Schema.ObjectId, ref: "Autor" } 
 

@@ -13,7 +13,9 @@ jasmine.loadConfig({
 	]
 })
 
-mongoose.connect('mongodb://localhost/testing')
+mongoose.connect('mongodb://localhost/testing', {
+  useMongoClient: true
+})
 .then(() => {
   mongoose.connection.db.dropDatabase(()=> {
     jasmine.execute();
